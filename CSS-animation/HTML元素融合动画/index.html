@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!-- 定义文档类型为 HTML5 -->
+<html lang="en"> <!-- HTML文档开始，语言设置为英文 -->
+
+<head> <!-- 文档的头部开始 -->
+    <meta charset="UTF-8"> <!-- 定义字符编码为 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口元信息，用于改进移动设备浏览 -->
+    <title>Document</title> <!-- 文档标题 -->
+    <style> <!-- 内部样式表开始 -->
+        body{ <!-- 对body元素应用样式 -->
+            background-color: black; <!-- 背景颜色为黑色 -->
+            width: 100vw; <!-- 宽度设置为100%的视窗宽度 -->
+            height: 100vh; <!-- 高度设置为100%的视窗高度 -->
+        }
+
+        .container{ <!-- 对类名为container的元素应用样式 -->
+            width:900px; <!-- 宽度为900px -->
+            height: 600px; <!-- 高度为600px -->
+            background-color: black; <!-- 背景颜色为黑色 -->
+            display: flex; <!-- 设置为flex布局 -->
+            justify-content: center; <!-- 子元素水平居中 -->
+            align-items: center; <!-- 子元素垂直居中 -->
+            filter: contrast(50); /* 锐化 得给元素设置背景颜色，才能生效 */
+        }
+
+        .box1,.box2{ <!-- 对类名为box1和box2的元素应用样式 -->
+            width:200px; <!-- 宽度为200px -->
+            height: 200px; <!-- 高度为200px -->
+            background-color: white; <!-- 背景颜色为白色 -->
+            float: left; <!-- 向左浮动 -->
+            border-radius: 50%; <!-- 圆角半径为50%，使元素呈现为圆形 -->
+            filter: blur(25px); /* 设置元素模糊 */
+        }
+
+        .box1{ <!-- 对类名为box1的元素应用样式 -->
+            animation: r1 0.8s ease-in-out infinite alternate; <!-- 应用动画r1，时长0.8s，缓入缓出，无限循环，动画结束状态反向开始 -->
+        }
+
+        .box2{ <!-- 对类名为box2的元素应用样式 -->
+            animation: r2 0.8s ease-in-out infinite alternate; <!-- 应用动画r2，时长0.8s，缓入缓出，无限循环，动画结束状态反向开始 -->
+        }
+
+        @keyframes r1{ <!-- 定义关键帧动画r1 -->
+            from{ <!-- 初始状态 -->
+                transform: translateX(-30px); <!-- 元素向左移动30px -->
+            }
+            to{ <!-- 结束状态 -->
+                transform: translateX(25px); <!-- 元素向右移动25px -->
+            }
+        }
+
+        @keyframes r2{ <!-- 定义关键帧动画r2 -->
+            from{ <!-- 初始状态 -->
+                transform: translateX(30px); <!-- 元素向右移动30px -->
+            }
+            to{ <!-- 结束状态 -->
+                transform: translateX(-25px); <!-- 元素向左移动25px -->
+            }
+        }
+    </style> <!-- 内部样式表结束 -->
+</head> <!-- 文档头部结束 -->
+
+<body> <!-- 主体部分开始 -->
+    <div class="container"> <!-- 定义一个类名为container的div容器 -->
+        <div class="box1"></div> <!-- 定义一个类名为box1的div元素 -->
+        <div class="box2"></div> <!-- 定义一个类名为box2的div元素 -->
+    </div>
+</body> <!-- 主体部分结束 -->
+
+</html> <!-- HTML文档结束 -->
