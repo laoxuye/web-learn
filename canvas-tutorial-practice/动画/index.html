@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas> <!--定义一个id为"canvas"，宽高都为600的canvas元素-->
+<!--JavaScript代码开始-->
+<script>
+const canvas = document.getElementById('canvas') // 获取id为'canvas'的元素
+const ctx = canvas.getContext('2d') // 获取canvas元素的2D渲染上下文
+ctx.fillStyle = 'purple' //设置填充颜色为紫色
+const step = 1    // 每步的长度是1
+let xPosition = 0 // x坐标的初始位置是0
+move()            // call move函数
+function move() { //定义move函数
+    ctx.clearRect(0, 0, 600, 600) //清除整个canvas的内容
+    ctx.fillRect(xPosition, 0, 300, 150) //在当前xPosition位置绘制一个300x150的矩形
+    xPosition += step //xPosition向右移动一个step
+    if (xPosition <= 300) { //如果xPosition小于或等于300
+        requestAnimationFrame(() => { //在下一帧执行
+            move() //再次调用move函数，形成动画效果
+        })
+    }
+} //回调
+</script> <!--JavaScript代码结束-->
+
+</body>
+</html>
